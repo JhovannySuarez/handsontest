@@ -6,6 +6,6 @@ Spring boot project that uses
 - Mapstruct Helper to map Entity Object to DTO Object
 - The front-end side uses thymeleaf and BootStrap
 
-API URI: http://localhost:8080/api/employees/
-WEB URL: http://localhost:8080/
+* API URI: http://localhost:8080/api/employees/
+* WEB URL: http://localhost:8080/
 
