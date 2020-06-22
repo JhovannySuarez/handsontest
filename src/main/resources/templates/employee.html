@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://www.springframework.org/tags">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1> <small>Hands On Test Solution</small></h1>
+            </div>
+
+            <div>
+                <form th:action="@{/}" >
+                    <div class="form-group">
+                        <label for="idEmp">Employee ID</label>
+                        <input type="text" class="form-control" id="idEmp" th:name="employeeId">
+                    </div>
+                    <button id="formEmpBtn" type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Contract Type Name</th>
+                            <th>Role ID</th>
+                            <th>Role Name</th>
+                            <th>Role Description</th>
+                            <th>Hourly Salary</th>
+                            <th>Monthly Salary</th>
+                            <th>Calculate dAnnual Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="empTable">
+
+                        <th:block th:each="employee : ${employees}">
+                            <tr>
+                                <td th:text="${employee.id}"/>
+                                <td th:text="${employee.name}"/>
+
+                                <td th:text="${employee.contractTypeName}"/>
+                                <td th:text="${employee.roleId}"/>
+                                <td th:text="${employee.roleName}"/>
+                                <td th:text="${employee.roleDescription}"/>
+                                <td th:text="${employee.hourlySalary}"/>
+                                <td th:text="${employee.monthlySalary}"/>
+                                <td th:text="${employee.calculatedAnnualSalary}"/>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
